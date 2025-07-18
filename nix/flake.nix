@@ -5,11 +5,11 @@
 		flake-utils.url = "github:numtide/flake-utils";
 	};
 	outputs = {self, nixpkgs, flake-utils}:
-	flake-utils.lib.eachDefaultSystem( sys:
+	flake-utils.lib.eachDefaultSystem(system:
 	let
-		pkgs = nixpkgs.legacyPackages.${sys};
+		pkgs = nixpkgs.legacyPackages.${system};
 	in {
-		devShell.default = pkgs.mkShell {
+		devShells.default = pkgs.mkShell {
 			packages = with pkgs [ 
 
 				# <packages potukange>
