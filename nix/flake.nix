@@ -10,7 +10,7 @@
 		pkgs = nixpkgs.legacyPackages.${system};
 	in {
 		devShells.default = pkgs.mkShell {
-			packages = with pkgs [ 
+			packages = with pkgs; [ 
 
 				# <packages potukange>
 
@@ -18,7 +18,7 @@
 				# 	haskell packages potukange
 				# ]))
 
-			]
-		}
+			];
+		};
 	});
 }
