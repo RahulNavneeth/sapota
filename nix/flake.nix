@@ -12,9 +12,9 @@
 	      		devShells.default = pkgs.mkShell {
 	      		 	packages = with pkgs; [
 	      		 		# <packages potukange>
-	      		 		# (haskellPackages.ghcWithPackages (hp: [
-	      		 		#   haskell packages potukange
-	      		 		# ]))
+
+	      		 		# (haskellPackages.ghcWithPackages (hp: [ haskell packages potukange ]))
+            			# (python3.buildEnv.override { extraLibs = [ python packages potukange ]; })
 	      		 	];
 	      		};
 	      	}
