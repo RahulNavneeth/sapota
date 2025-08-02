@@ -7,9 +7,8 @@ CFLAGS := -Iinclude
 BIN = bin
 SRC = $(shell find . | grep "\.c")
 OBJ = $(patsubst %.c, $(BIN)/%.o, $(SRC))
-UTILS_HEADER = "./utils/headers.sh"
 
-.PHONY: all dirs util clean build
+.PHONY: all dirs clean build
 
 all: clean util dirs build
 
@@ -19,10 +18,6 @@ clean:
 dirs:
 	mkdir $(BIN)
 
-util:
-	chmod +x $(UTILS_HEADER)
-	$(UTILS_HEADER) $(path)
-
 build: $(OBJ)
 	$(CC) -o $(BIN)/main $^ $(CLIBS)
 
@@ -31,4 +26,4 @@ $(BIN)/%.o: %.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 run: all
-	$(BIN)/main $(path)
+	$(BIN)/main
