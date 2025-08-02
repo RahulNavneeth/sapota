@@ -1,8 +1,7 @@
 CC = clang
 CFLAGS = -Wall -O3
 CFLAGS := -Iinclude
-# CLIBS = -L
-# CLIB = -l
+# LDFLAGS = 
 
 BIN = bin
 SRC = $(shell find . | grep "\.c")
@@ -19,7 +18,7 @@ dirs:
 	mkdir $(BIN)
 
 build: $(OBJ)
-	$(CC) -o $(BIN)/main $^ $(CLIBS)
+	$(CC) -o $(BIN)/main $^
 
 $(BIN)/%.o: %.c 
 	mkdir -p $(dir $@)
