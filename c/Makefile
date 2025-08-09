@@ -1,10 +1,10 @@
 CC = clang
 CFLAGS = -Wall -O3
-CFLAGS := -Iinclude
+CFLAGS += -Iinclude
 # LDFLAGS = 
 
 BIN = bin
-SRC = $(shell find . | grep "\.c")
+SRC = $(shell find src -name "*.c")
 OBJ = $(patsubst %.c, $(BIN)/%.o, $(SRC))
 
 .PHONY: all dirs clean build
