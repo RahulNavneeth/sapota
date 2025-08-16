@@ -18,9 +18,9 @@ spec:
   volumes:
     - name: serve
       hostPath:
-        path: /Users/rahulmnavneeth/projects/podman-nix/serve
+        path: /Users/rahulmnavneeth/projects/sapota/nix/podman/serve
         type: Directory
     - name: nginx-conf
       hostPath:
-        path: /Users/rahulmnavneeth/projects/podman-nix/config
+        path: /Users/rahulmnavneeth/projects/sapota/nix/podman/config
         type: Directory
